@@ -1,7 +1,8 @@
 :root {
-  --green: #779558;
-  --cream: #eeedd3;
-  --max-width: calc(700px + 6 * ((85vw - 700px) / 40));
+  --dark: #db97a2;
+  --light: #e2c4ce;
+  --max-width: calc(700px + 6 * ((50vw - 700px) / 40));
+  --chess-piece: black;
 }
 
 body {
@@ -16,9 +17,12 @@ body {
   grid-template-rows: auto;
 
   max-width: var(--max-width);
-  margin: 1rem auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 5rem;
+
   box-sizing: border-box;
-  border: 1rem solid darken(var(--green), 30%);
+  border: 1rem solid darken(var(--dark), 30%);
 }
 
 .grid__item::before {
@@ -30,22 +34,24 @@ body {
 
 a {
   text-decoration: none;
-  color: black;
+  color: var(--chess-piece);
   /* font-size: calc(2vw + 2vh + 1vmin); */
   font-size: calc(30px + (95 - 30) * ((100vw - 270px) / (3000 - 270)));
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0.7;
 }
 
 a:hover {
-  border: 5px solid hotpink;
+  border: 0.1vw solid hotpink;
+  opacity: 1;
 }
 
 .grid__item {
   display: grid;
-  background-color: var(--cream);
+  background-color: var(--light);
 }
 
 :nth-of-type(-2n + 8),
@@ -56,5 +62,5 @@ a:hover {
 :nth-of-type(40) ~ *:nth-of-type(-2n + 47),
 :nth-of-type(48) ~ *:nth-of-type(-2n + 56),
 :nth-of-type(56) ~ *:nth-of-type(-2n + 63) {
-  background-color: var(--green);
+  background-color: var(--dark);
 }
