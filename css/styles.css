@@ -1,0 +1,60 @@
+:root {
+  --green: #779558;
+  --cream: #eeedd3;
+  --max-width: calc(700px + 6 * ((85vw - 700px) / 40));
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #212121;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: auto;
+
+  max-width: var(--max-width);
+  margin: 1rem auto;
+  box-sizing: border-box;
+  border: 1rem solid darken(var(--green), 30%);
+}
+
+.grid__item::before {
+  content: "";
+  display: block;
+  padding-bottom: 100%;
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  /* font-size: calc(2vw + 2vh + 1vmin); */
+  font-size: calc(30px + (95 - 30) * ((100vw - 270px) / (3000 - 270)));
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+a:hover {
+  border: 5px solid hotpink;
+}
+
+.grid__item {
+  display: grid;
+  background-color: var(--cream);
+}
+
+:nth-of-type(-2n + 8),
+:nth-of-type(8) ~ *:nth-of-type(-2n + 15),
+:nth-of-type(16) ~ *:nth-of-type(-2n + 24),
+:nth-of-type(24) ~ *:nth-of-type(-2n + 31),
+:nth-of-type(32) ~ *:nth-of-type(-2n + 40),
+:nth-of-type(40) ~ *:nth-of-type(-2n + 47),
+:nth-of-type(48) ~ *:nth-of-type(-2n + 56),
+:nth-of-type(56) ~ *:nth-of-type(-2n + 63) {
+  background-color: var(--green);
+}
