@@ -16,86 +16,124 @@ fetch(url, options)
     return response.json();
   })
   .then((data) => {
-    // We have the data
-    // console.log(data);
-    handleData(data);
-  })
-  .catch((e) => {
-    // Whoops, something went wrong
-    console.error("An error occurred:", e.message);
+    // handleData(data);
+
+    generateBoard(data);
   });
 
-function showInfo(piece) {
-  const template = document.querySelector("template").content;
-  const clone = template.cloneNode(true);
+function generateBoard(chess) {
+  /************************ 
+   MAKE BOARD OUT OF GRID ITEMS
+  *************************/
+  for (let i = 0; i < 64; i++) {
+    const template = document.querySelector("template").content;
+    const clone = template.cloneNode(true);
 
-  clone.querySelector(".info_name").textContent = piece[4].name;
-  clone.querySelector(".info_value").textContent = `Value: ${piece[4].value}`;
+    document.querySelector(".grid").appendChild(clone);
+  }
 
-  document.querySelector("article.info").appendChild(clone);
-  console.log("ana");
-}
+  const blk_pawns = [
+    document.querySelector(".grid__item:nth-of-type(9)"),
+    document.querySelector(".grid__item:nth-of-type(10)"),
+    document.querySelector(".grid__item:nth-of-type(11)"),
+    document.querySelector(".grid__item:nth-of-type(12)"),
+    document.querySelector(".grid__item:nth-of-type(13)"),
+    document.querySelector(".grid__item:nth-of-type(14)"),
+    document.querySelector(".grid__item:nth-of-type(15)"),
+    document.querySelector(".grid__item:nth-of-type(16)"),
+  ];
+  const wht_pawns = [
+    document.querySelector(".grid__item:nth-of-type(49)"),
+    document.querySelector(".grid__item:nth-of-type(50)"),
+    document.querySelector(".grid__item:nth-of-type(51)"),
+    document.querySelector(".grid__item:nth-of-type(52)"),
+    document.querySelector(".grid__item:nth-of-type(53)"),
+    document.querySelector(".grid__item:nth-of-type(54)"),
+    document.querySelector(".grid__item:nth-of-type(55)"),
+    document.querySelector(".grid__item:nth-of-type(56)"),
+  ];
 
-function handleData(chess) {
-  // const template = document.querySelector("template.board").content;
-  // const clone = template.cloneNode(true);
-  const clone = document;
+  const blk_rooks = [
+    document.querySelector(".grid__item:nth-of-type(1)"),
+    document.querySelector(".grid__item:nth-of-type(8)"),
+  ];
+  const wht_rooks = [
+    document.querySelector(".grid__item:nth-of-type(64)"),
+    document.querySelector(".grid__item:nth-of-type(57)"),
+  ];
 
-  clone.querySelector(".blk_rook").addEventListener("click", function () {
-    showInfo(chess);
-  });
+  const blk_knights = [
+    document.querySelector(".grid__item:nth-of-type(2)"),
+    document.querySelector(".grid__item:nth-of-type(7)"),
+  ];
+  const wht_knights = [
+    document.querySelector(".grid__item:nth-of-type(63)"),
+    document.querySelector(".grid__item:nth-of-type(58)"),
+  ];
+  const blk_bishops = [
+    document.querySelector(".grid__item:nth-of-type(62)"),
+    document.querySelector(".grid__item:nth-of-type(59)"),
+  ];
+  const wht_bishops = [
+    document.querySelector(".grid__item:nth-of-type(3)"),
+    document.querySelector(".grid__item:nth-of-type(6)"),
+  ];
 
-  const blk_pawns = clone.querySelectorAll(".blk_pawn");
-  const blk_rooks = clone.querySelectorAll(".blk_rook");
-  const blk_knights = clone.querySelectorAll(".blk_knight");
-  const blk_bishops = clone.querySelectorAll(".blk_bishop");
+  const blk_queen = document.querySelector(".grid__item:nth-of-type(4)");
+  blk_queen.appendChild(document.createElement("button"));
+  blk_queen.firstChild.innerHTML = chess[5].codeblk;
 
-  const wht_pawns = clone.querySelectorAll(".wht_pawn");
-  const wht_rooks = clone.querySelectorAll(".wht_rook");
-  const wht_knights = clone.querySelectorAll(".wht_knight");
-  const wht_bishops = clone.querySelectorAll(".wht_bishop");
+  const wht_queen = document.querySelector(".grid__item:nth-of-type(60)");
+  wht_queen.appendChild(document.createElement("button"));
+  wht_queen.firstChild.innerHTML = chess[5].codewht;
 
-  for (let i = 0; i < blk_pawns.length; i++) {
-    blk_pawns[i].innerHTML = chess[2].codeblk;
-    wht_pawns[i].innerHTML = chess[2].codewht;
+  const blk_king = document.querySelector(".grid__item:nth-of-type(5)");
+  blk_king.appendChild(document.createElement("button"));
+  blk_king.firstChild.innerHTML = chess[0].codeblk;
 
-    blk_pawns[i].setAttribute("href", "details.html?_id=" + chess[2]._id);
-    wht_pawns[i].setAttribute("href", "details.html?_id=" + chess[2]._id);
+  const wht_king = document.querySelector(".grid__item:nth-of-type(61)");
+  wht_king.appendChild(document.createElement("button"));
+  wht_king.firstChild.innerHTML = chess[0].codewht;
+
+  for (let i = 0; i < 8; i++) {
+    blk_pawns[i].appendChild(document.createElement("button"));
+    wht_pawns[i].appendChild(document.createElement("button"));
+
+    blk_pawns[i].firstChild.innerHTML = chess[2].codeblk;
+    wht_pawns[i].firstChild.innerHTML = chess[2].codewht;
+
+    //to add class to buttons just in case we'll need it later :)
+    // document.querySelectorAll(".blk_rook")[i].innerHTML = chess[2].codeblk;
   }
 
   for (let x = 0; x < 2; x++) {
-    blk_rooks[x].innerHTML = chess[4].codeblk;
-    blk_knights[x].innerHTML = chess[1].codeblk;
-    blk_bishops[x].innerHTML = chess[3].codeblk;
-    wht_rooks[x].innerHTML = chess[4].codewht;
-    wht_knights[x].innerHTML = chess[1].codewht;
-    wht_bishops[x].innerHTML = chess[3].codewht;
+    blk_rooks[x].appendChild(document.createElement("button"));
+    wht_rooks[x].appendChild(document.createElement("button"));
 
-    blk_rooks[x].setAttribute("href", "details.html?_id=" + chess[4]._id);
-    blk_knights[x].setAttribute("href", "details.html?_id=" + chess[1]._id);
-    blk_bishops[x].setAttribute("href", "details.html?_id=" + chess[3]._id);
-    wht_rooks[x].setAttribute("href", "details.html?_id=" + chess[4]._id);
-    wht_knights[x].setAttribute("href", "details.html?_id=" + chess[1]._id);
-    wht_bishops[x].setAttribute("href", "details.html?_id=" + chess[3]._id);
+    blk_knights[x].appendChild(document.createElement("button"));
+    wht_knights[x].appendChild(document.createElement("button"));
+
+    blk_bishops[x].appendChild(document.createElement("button"));
+    wht_bishops[x].appendChild(document.createElement("button"));
+
+    blk_rooks[x].firstChild.innerHTML = chess[4].codeblk;
+    wht_rooks[x].firstChild.innerHTML = chess[4].codewht;
+
+    blk_knights[x].firstChild.innerHTML = chess[1].codeblk;
+    wht_knights[x].firstChild.innerHTML = chess[1].codewht;
+
+    blk_bishops[x].firstChild.innerHTML = chess[3].codewht;
+    wht_bishops[x].firstChild.innerHTML = chess[3].codeblk;
   }
-
-  clone.querySelector(".blk_queen").innerHTML = chess[0].codeblk;
-  clone.querySelector(".blk_king").innerHTML = chess[5].codeblk;
-  clone
-    .querySelector(".blk_queen")
-    .setAttribute("href", "details.html?_id=" + chess[0]._id);
-  clone
-    .querySelector(".blk_king")
-    .setAttribute("href", "details.html?_id=" + chess[5]._id);
-
-  clone.querySelector(".wht_queen").innerHTML = chess[0].codewht;
-  clone.querySelector(".wht_king").innerHTML = chess[5].codewht;
-  clone
-    .querySelector(".wht_queen")
-    .setAttribute("href", "details.html?_id=" + chess[0]._id);
-  clone
-    .querySelector(".wht_king")
-    .setAttribute("href", "details.html?_id=" + chess[5]._id);
-
-  // document.querySelector(".grid").appendChild(clone);
 }
+
+function showInfo(piece) {
+  document.querySelector(".info_name").textContent = piece[4].name;
+  document.querySelector(
+    ".info_value"
+  ).textContent = `Value: ${piece[4].value}`;
+}
+
+//   document.querySelector(".blk_rook").addEventListener("click", function () {
+//     showInfo(chess);
+//   });

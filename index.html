@@ -17,104 +17,27 @@
       </ul>
     </nav>
 
-    <template>
-      <h2 class="info_name">{name}</h2>
-      <img src="/chess_svg/bishop_b.svg" class="info_img" alt="" />
-      <h3>Movement description</h3>
-      <p class="info_desc">
-        {Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit,
-        quos a recusandae voluptates incidunt quod aperiam accusamus quas. Dolor
-        ipsa, vitae vero delectus eum aliquid doloremque at aspernatur iusto
-        tempore?}
-      </p>
-      <p class="info_value">{value}</p>
-    </template>
-
     <main>
-      <div class="grid">
-        <div class="grid__item"><button class="blk_rook">{piece}</button></div>
-        <div class="grid__item">
-          <button class="blk_knight">{piece}</button>
-        </div>
-        <div class="grid__item">
-          <button class="blk_bishop">{piece}</button>
-        </div>
-        <div class="grid__item"><button class="blk_queen">{piece}</button></div>
-        <div class="grid__item"><button class="blk_king">{piece}</button></div>
-        <div class="grid__item">
-          <button class="blk_bishop">{piece}</button>
-        </div>
-        <div class="grid__item">
-          <button class="blk_knight">{piece}</button>
-        </div>
-        <div class="grid__item"><button class="blk_rook">{piece}</button></div>
-        <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
+      <template>
         <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"></div>
-        <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
-        <div class="grid__item"><button class="wht_rook">{piece}</button></div>
-        <div class="grid__item">
-          <button class="wht_knight">{piece}</button>
-        </div>
-        <div class="grid__item">
-          <button class="wht_bishop">{piece}</button>
-        </div>
-        <div class="grid__item"><button class="wht_queen">{piece}</button></div>
-        <div class="grid__item"><button class="wht_king">{piece}</button></div>
-        <div class="grid__item">
-          <button class="wht_bishop">{piece}</button>
-        </div>
-        <div class="grid__item">
-          <button class="wht_knight">{piece}</button>
-        </div>
-        <div class="grid__item"><button class="wht_rook">{piece}</button></div>
-      </div>
+      </template>
 
-      <article class="info"></article>
+      <!-- ------------- -->
+
+      <div class="grid"></div>
+
+      <article class="info">
+        <h2 class="info_name">{name}</h2>
+        <img src="/chess_svg/bishop_b.svg" class="info_img" alt="" />
+        <h3>Movement description</h3>
+        <p class="info_desc">
+          {Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Reprehenderit, quos a recusandae voluptates incidunt quod aperiam
+          accusamus quas. Dolor ipsa, vitae vero delectus eum aliquid doloremque
+          at aspernatur iusto tempore?}
+        </p>
+        <p class="info_value">{value}</p>
+      </article>
     </main>
 
     <script src="scripts/main.js"></script>
