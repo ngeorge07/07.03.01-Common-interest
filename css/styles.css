@@ -46,6 +46,7 @@ li {
 button {
   text-decoration: none;
   color: var(--chess-piece);
+  /* font-size: 1vw; */
   /* font-size: calc(2vw + 2vh + 1vmin); */
   font-size: calc(30px + (95 - 30) * ((100vw - 270px) / (3000 - 270)));
   grid-area: 1 / 1 / 2 / 2;
@@ -105,10 +106,13 @@ button:hover {
 
 .info {
   color: white;
+  margin-right: 3rem;
 }
 
-/* @media screen and (max-width: 400px) {
-  nav {
-    float: none;
+@media screen and (min-width: 700px) {
+  main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 3rem;
   }
-} */
+}
