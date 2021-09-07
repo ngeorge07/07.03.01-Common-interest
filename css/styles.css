@@ -1,3 +1,5 @@
+@import url("https://use.typekit.net/uja6frc.css");
+
 :root {
   --dark: #db97a2;
   --light: #e2c4ce;
@@ -8,11 +10,59 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #212121;
+  background-color: #2c3240;
 }
 
-main {
+/* NAV START */
+
+nav {
+  float: left;
+}
+
+nav a:hover {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  font-family: lust, serif;
+  font-weight: 700;
+  text-shadow: 2px 2px pink;
+  background-color: #7d6b57;
+  border-style: solid;
+  border-color: black;
+  padding: 10px;
+  margin: 10px;
+}
+
+/* NAV END */
+
+button {
+  text-decoration: none;
+  color: var(--chess-piece);
+  /* font-size: calc(2vw + 2vh + 1vmin); */
+  font-size: calc(30px + (95 - 30) * ((100vw - 270px) / (3000 - 270)));
+  grid-area: 1 / 1 / 2 / 2;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  background-color: inherit;
+  border: none;
+  outline: none;
+}
+
+button:hover {
+  border: 0.1rem solid hotpink;
+  opacity: 1;
+  transition: 0.2s;
+  cursor: pointer;
 }
 
 .grid {
@@ -36,46 +86,29 @@ main {
   grid-area: 1 / 1 / 2 / 2;
 }
 
-a,
-button {
-  text-decoration: none;
-  color: var(--chess-piece);
-  /* font-size: calc(2vw + 2vh + 1vmin); */
-  font-size: calc(30px + (95 - 30) * ((100vw - 270px) / (3000 - 270)));
-  grid-area: 1 / 1 / 2 / 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.7;
-  cursor: pointer;
-  border: none;
-  outline: none;
-  background-color: inherit;
-}
-
-a:hover,
-button:hover {
-  border: 0.1vw solid hotpink;
-  opacity: 1;
-}
-
 .grid__item {
   display: grid;
   background-color: var(--light);
 }
 
-:nth-of-type(-2n + 8),
-:nth-of-type(8) ~ *:nth-of-type(-2n + 15),
-:nth-of-type(16) ~ *:nth-of-type(-2n + 24),
-:nth-of-type(24) ~ *:nth-of-type(-2n + 31),
-:nth-of-type(32) ~ *:nth-of-type(-2n + 40),
-:nth-of-type(40) ~ *:nth-of-type(-2n + 47),
-:nth-of-type(48) ~ *:nth-of-type(-2n + 56),
-:nth-of-type(56) ~ *:nth-of-type(-2n + 63) {
+.grid__item:nth-of-type(-2n + 8),
+.grid__item:nth-of-type(8) ~ *:nth-of-type(-2n + 15),
+.grid__item:nth-of-type(8) ~ *:nth-of-type(-2n + 15),
+.grid__item:nth-of-type(16) ~ *:nth-of-type(-2n + 24),
+.grid__item:nth-of-type(24) ~ *:nth-of-type(-2n + 31),
+.grid__item:nth-of-type(32) ~ *:nth-of-type(-2n + 40),
+.grid__item:nth-of-type(40) ~ *:nth-of-type(-2n + 47),
+.grid__item:nth-of-type(48) ~ *:nth-of-type(-2n + 56),
+.grid__item:nth-of-type(56) ~ *:nth-of-type(-2n + 63) {
   background-color: var(--dark);
 }
 
 .info {
   color: white;
-  margin: 0 5vw;
 }
+
+/* @media screen and (max-width: 400px) {
+  nav {
+    float: none;
+  }
+} */
