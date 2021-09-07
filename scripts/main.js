@@ -25,9 +25,25 @@ fetch(url, options)
     console.error("An error occurred:", e.message);
   });
 
-function handleData(chess) {
+function showInfo(piece) {
   const template = document.querySelector("template").content;
   const clone = template.cloneNode(true);
+
+  clone.querySelector(".info_name").textContent = piece[4].name;
+  clone.querySelector(".info_value").textContent = `Value: ${piece[4].value}`;
+
+  document.querySelector("article.info").appendChild(clone);
+  console.log("ana");
+}
+
+function handleData(chess) {
+  // const template = document.querySelector("template.board").content;
+  // const clone = template.cloneNode(true);
+  const clone = document;
+
+  clone.querySelector(".blk_rook").addEventListener("click", function () {
+    showInfo(chess);
+  });
 
   const blk_pawns = clone.querySelectorAll(".blk_pawn");
   const blk_rooks = clone.querySelectorAll(".blk_rook");
@@ -81,5 +97,5 @@ function handleData(chess) {
     .querySelector(".wht_king")
     .setAttribute("href", "details.html?_id=" + chess[5]._id);
 
-  document.querySelector("main").appendChild(clone);
+  // document.querySelector(".grid").appendChild(clone);
 }
