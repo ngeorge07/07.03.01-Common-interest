@@ -7,24 +7,27 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
     <template>
-      <div class="grid__item"><a href="#" class="blk_rook">{piece}</a></div>
-      <div class="grid__item"><a class="blk_knight" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_bishop" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_queen" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_king" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_bishop" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_knight" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_rook" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="blk_pawn" href="#">{piece}</a></div>
+      <div class="grid__item">
+        <button data-modal-target="#modal" class="blk_rook">{piece}</button>
+      </div>
+      <div class="grid__item"><button class="blk_knight">{piece}</button></div>
+      <div class="grid__item"><button class="blk_bishop">{piece}</button></div>
+      <div class="grid__item"><button class="blk_queen">{piece}</button></div>
+      <div class="grid__item"><button class="blk_king">{piece}</button></div>
+      <div class="grid__item"><button class="blk_bishop">{piece}</button></div>
+      <div class="grid__item"><button class="blk_knight">{piece}</button></div>
+      <div class="grid__item"><button class="blk_rook">{piece}</button></div>
+      <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="blk_pawn">{piece}</button></div>
       <div class="grid__item"></div>
       <div class="grid__item"></div>
       <div class="grid__item"></div>
@@ -57,25 +60,37 @@
       <div class="grid__item"></div>
       <div class="grid__item"></div>
       <div class="grid__item"></div>
-      <div class="grid__item"><a class="wht_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_pawn" href="#">{piece}</a></div>
-      <div class="grid__item"><a href="#" class="wht_rook">{piece}</a></div>
-      <div class="grid__item"><a class="wht_knight" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_bishop" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_queen" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_king" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_bishop" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_knight" href="#">{piece}</a></div>
-      <div class="grid__item"><a class="wht_rook" href="#">{piece}</a></div>
+      <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="wht_pawn">{piece}</button></div>
+      <div class="grid__item"><button class="wht_rook">{piece}</button></div>
+      <div class="grid__item"><button class="wht_knight">{piece}</button></div>
+      <div class="grid__item"><button class="wht_bishop">{piece}</button></div>
+      <div class="grid__item"><button class="wht_queen">{piece}</button></div>
+      <div class="grid__item"><button class="wht_king">{piece}</button></div>
+      <div class="grid__item"><button class="wht_bishop">{piece}</button></div>
+      <div class="grid__item"><button class="wht_knight">{piece}</button></div>
+      <div class="grid__item"><button class="wht_rook">{piece}</button></div>
     </template>
 
-    <main id="board" class="grid"></main>
+    <main>
+      <div class="grid"></div>
+
+      <article class="info">
+        <h2>Name of pieces</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. In iste quod
+          dicta porro rerum cum harum, voluptatibus aut quaerat incidunt
+          dolores. Impedit quas fugit minima maxime fugiat maiores laboriosam
+          voluptates.
+        </p>
+      </article>
+    </main>
 
     <script src="scripts/main.js"></script>
   </body>

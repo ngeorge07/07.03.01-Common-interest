@@ -81,5 +81,5 @@ function handleData(chess) {
     .querySelector(".wht_king")
     .setAttribute("href", "details.html?_id=" + chess[5]._id);
 
-  document.querySelector("main").appendChild(clone);
+  document.querySelector(".grid").appendChild(clone);
 }

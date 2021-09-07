@@ -11,6 +11,10 @@ body {
   background-color: #212121;
 }
 
+main {
+  display: flex;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
@@ -32,7 +36,8 @@ body {
   grid-area: 1 / 1 / 2 / 2;
 }
 
-a {
+a,
+button {
   text-decoration: none;
   color: var(--chess-piece);
   /* font-size: calc(2vw + 2vh + 1vmin); */
@@ -42,9 +47,14 @@ a {
   align-items: center;
   justify-content: center;
   opacity: 0.7;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background-color: inherit;
 }
 
-a:hover {
+a:hover,
+button:hover {
   border: 0.1vw solid hotpink;
   opacity: 1;
 }
@@ -63,4 +73,9 @@ a:hover {
 :nth-of-type(48) ~ *:nth-of-type(-2n + 56),
 :nth-of-type(56) ~ *:nth-of-type(-2n + 63) {
   background-color: var(--dark);
+}
+
+.info {
+  color: white;
+  margin: 0 5vw;
 }
