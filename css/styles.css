@@ -176,6 +176,18 @@ MOVEMENTS PAGE
   align-items: center;
   justify-content: center;
   background-color: none;
+  z-index: 2;
+}
+
+.circle {
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: center;
+  justify-self: center;
+  width: 6vw;
+  height: 6vw;
+  background-color: #bbb;
+  border-radius: 50%;
+  opacity: 0.8;
 }
 
 .movePawn {
@@ -184,13 +196,14 @@ MOVEMENTS PAGE
 
 @keyframes movePawn {
   0%,
-  15% {
+  15%,
+  100% {
     transform: translate(0, 0);
   }
   50% {
     transform: translate(0, -9vw);
   }
-  100% {
+  80% {
     transform: translate(0, -18vw);
   }
 }
