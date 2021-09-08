@@ -174,19 +174,47 @@ function generateBoard(chess) {
     allPieces[y].addEventListener("click", showInfo);
 
     function showInfo(e) {
-      // console.log(e.target.className);
-      if (e.target.className === "queen") {
+      // console.log(e.target.className)
+      if (e.target.className === "pawn") {
+        document.querySelector(".info_name").textContent = chess[2].name;
+        document.querySelector(
+          ".info_value"
+        ).textContent = `Value: ${chess[2].value}`;
+        document.querySelector(".info_desc").textContent = chess[2].movement;
+      } else if (e.target.className === "rook") {
+        document.querySelector(".info_name").textContent = chess[4].name;
+        document.querySelector(
+          ".info_value"
+        ).textContent = `Value: ${chess[4].value}`;
+        document.querySelector(".info_desc").textContent = chess[4].movement;
+      } else if (e.target.className === "knight") {
+        document.querySelector(".info_name").textContent = chess[1].name;
+        document.querySelector(
+          ".info_value"
+        ).textContent = `Value: ${chess[1].value}`;
+        document.querySelector(".info_desc").textContent = chess[1].movement;
+      } else if (e.target.className === "bishop") {
+        document.querySelector(".info_name").textContent = chess[3].name;
+        document.querySelector(
+          ".info_value"
+        ).textContent = `Value: ${chess[3].value}`;
+        document.querySelector(".info_desc").textContent = chess[3].movement;
+      } else if (e.target.className === "queen") {
         document.querySelector(".info_name").textContent = chess[0].name;
         document.querySelector(
           ".info_value"
         ).textContent = `Value: ${chess[0].value}`;
-        console.log(document.getElementsByClassName("queen"));
-      } else console.log(document.querySelector(".queen").innerHTML);
+        document.querySelector(".info_desc").textContent = chess[0].movement;
+      } else if (e.target.className === "king") {
+        document.querySelector(".info_name").textContent = chess[5].name;
+        document.querySelector(
+          ".info_value"
+        ).textContent = `Value: ${chess[5].value}`;
+        document.querySelector(".info_desc").textContent = chess[5].movement;
+      }
     }
   }
-  // console.log(allPieces);
 }
-
 // document.querySelector(".blk_rook").addEventListener("click", function () {
 //   showInfo(chess);
 // });
