@@ -1,8 +1,11 @@
-@import url("https://use.typekit.net/uja6frc.css");
+/* @import url("https://use.typekit.net/uja6frc.css"); */
 
 :root {
   --dark: #e884a5;
   --light: #e2c4ce;
+  --grape: #633947;
+  --dusty: #b099a1;
+  --brownpurple: #63575b;
   --max-width: calc(700px + 6 * ((50vw - 700px) / 40));
   --chess-piece: black;
 }
@@ -10,7 +13,7 @@
 body {
   padding: 0;
   margin: 0;
-  background-color: #2c3240;
+  background-color: var(--brownpurple);
 }
 
 /* NAV START */
@@ -33,12 +36,16 @@ ul {
 li {
   font-family: lust, serif;
   font-weight: 700;
-  text-shadow: 2px 2px pink;
-  background-color: #7d6b57;
+  text-shadow: 2px 2px var(--light);
+  background-color: var(--dusty);
   border-style: solid;
   border-color: black;
   padding: 10px;
   margin: 10px;
+}
+
+.navtext {
+  color: white;
 }
 
 /* NAV END */
@@ -76,7 +83,7 @@ button {
 
 button:hover {
   opacity: 1;
-  border: 1.5px solid hotpink;
+  border: 1.5px solid #633947;
   cursor: pointer;
   transition: 0.2s;
 }
@@ -131,10 +138,21 @@ img {
   flex-direction: column;
 
   background-color: #b099a1;
+  align-items: center;
+  font-size: 1.2rem;
+  border-radius: 2rem;
+  margin: 2rem;
 }
 
 .info h2 {
   align-self: center;
+  font-family: lust;
+  font-size: 3rem;
+}
+
+.info > h3,
+p {
+  font-family: Dolly-new, sans-serif;
 }
 
 @media screen and (min-width: 950px) {
