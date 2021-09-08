@@ -3,8 +3,8 @@
 :root {
   --dark: #db97a2;
   --light: #e2c4ce;
-  --max-width: calc(700px + 6 * ((50vw - 700px) / 40));
   --chess-piece: black;
+  --max-width: calc(700px + 6 * ((50vw - 700px) / 40));
 }
 
 body {

@@ -170,11 +170,12 @@ function generateBoard(chess) {
   }
 
   const allPieces = document.querySelectorAll("button");
+  console.log(allPieces);
   for (let y = 0; y < allPieces.length; y++) {
     allPieces[y].addEventListener("click", showInfo);
 
     function showInfo(e) {
-      // console.log(e.target.className)
+      console.log(e.target.className);
       if (e.target.className === "pawn") {
         document.querySelector(".info_name").textContent = chess[2].name;
         document.querySelector(
