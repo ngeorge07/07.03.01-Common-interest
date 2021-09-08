@@ -15,21 +15,18 @@ body {
 
 /* NAV START */
 
-nav {
-}
-
 nav a:hover {
   opacity: 1;
   transition: 0.2s;
 }
 
-ul {
+nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-li {
+nav ul li {
   font-family: lust, serif;
   font-weight: 700;
   text-shadow: 2px 2px pink;
@@ -80,14 +77,20 @@ button:hover {
   transition: 0.2s;
 }
 
+.move .grid {
+  grid-template-columns: repeat(5, 1fr);
+  margin: 1.5rem 0;
+}
+
+.index .grid {
+  grid-template-columns: repeat(8, 1fr);
+  margin: 1.5rem 0;
+}
+
 .grid {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
   grid-template-rows: auto;
-
   max-width: var(--max-width);
-  margin: 1.5rem 0;
-
   box-sizing: border-box;
   border: 1rem solid darken(var(--dark), 30%);
 }
@@ -104,15 +107,22 @@ button:hover {
   background-color: var(--light);
 }
 
-.grid__item:nth-of-type(-2n + 8),
-.grid__item:nth-of-type(8) ~ *:nth-of-type(-2n + 15),
-.grid__item:nth-of-type(8) ~ *:nth-of-type(-2n + 15),
-.grid__item:nth-of-type(16) ~ *:nth-of-type(-2n + 24),
-.grid__item:nth-of-type(24) ~ *:nth-of-type(-2n + 31),
-.grid__item:nth-of-type(32) ~ *:nth-of-type(-2n + 40),
-.grid__item:nth-of-type(40) ~ *:nth-of-type(-2n + 47),
-.grid__item:nth-of-type(48) ~ *:nth-of-type(-2n + 56),
-.grid__item:nth-of-type(56) ~ *:nth-of-type(-2n + 63) {
+.index .grid__item:nth-of-type(-2n + 8),
+.index .grid__item:nth-of-type(8) ~ *:nth-of-type(-2n + 15),
+.index .grid__item:nth-of-type(16) ~ *:nth-of-type(-2n + 24),
+.index .grid__item:nth-of-type(24) ~ *:nth-of-type(-2n + 31),
+.index .grid__item:nth-of-type(32) ~ *:nth-of-type(-2n + 40),
+.index .grid__item:nth-of-type(40) ~ *:nth-of-type(-2n + 47),
+.index .grid__item:nth-of-type(48) ~ *:nth-of-type(-2n + 56),
+.index .grid__item:nth-of-type(56) ~ *:nth-of-type(-2n + 63) {
+  background-color: var(--dark);
+}
+
+.move .grid__item:nth-of-type(-2n + 5),
+.move .grid__item:nth-of-type(5) ~ *:nth-of-type(-2n + 9),
+.move .grid__item:nth-of-type(10) ~ *:nth-of-type(-2n + 15),
+.move .grid__item:nth-of-type(15) ~ *:nth-of-type(-2n + 19),
+.move .grid__item:nth-of-type(20) ~ *:nth-of-type(-2n + 25) {
   background-color: var(--dark);
 }
 

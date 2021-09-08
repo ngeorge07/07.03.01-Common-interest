@@ -145,19 +145,19 @@ function generateBoard(chess) {
   *************************/
   const blk_queen = document.querySelector(".grid__item:nth-of-type(4)");
   blk_queen.appendChild(document.createElement("button"));
-  blk_queen.firstChild.innerHTML = chess[5].codeblk;
+  blk_queen.firstChild.innerHTML = chess[0].codeblk;
 
   const wht_queen = document.querySelector(".grid__item:nth-of-type(60)");
   wht_queen.appendChild(document.createElement("button"));
-  wht_queen.firstChild.innerHTML = chess[5].codewht;
+  wht_queen.firstChild.innerHTML = chess[0].codewht;
 
   const blk_king = document.querySelector(".grid__item:nth-of-type(5)");
   blk_king.appendChild(document.createElement("button"));
-  blk_king.firstChild.innerHTML = chess[0].codeblk;
+  blk_king.firstChild.innerHTML = chess[5].codeblk;
 
   const wht_king = document.querySelector(".grid__item:nth-of-type(61)");
   wht_king.appendChild(document.createElement("button"));
-  wht_king.firstChild.innerHTML = chess[0].codewht;
+  wht_king.firstChild.innerHTML = chess[5].codewht;
 
   /************************ 
   ADD CLASSES QUEENS AND KINGS
