@@ -171,25 +171,20 @@ function generateBoard(chess) {
 
   const allPieces = document.querySelectorAll("button");
   for (let y = 0; y < allPieces.length; y++) {
-    allPieces[y].addEventListener("click", function () {
-      showInfo(chess);
-    });
-  }
-  console.log(allPieces);
-}
+    allPieces[y].addEventListener("click", showInfo);
 
-function showInfo(piece) {
-  if (
-    document.querySelector(".queen").innerHTML === "♚" ||
-    document.querySelector(".queen").innerHTML === "♚"
-  ) {
-    console.log("YESSSSSS");
-    // document.querySelector(".info_name").textContent = piece[0].name;
-    // document.querySelector(
-    //   ".info_value"
-    // ).textContent = `Value: ${piece[0].value}`;
-    // console.log(document.getElementsByClassName("queen"));
-  } else console.log(document.querySelector(".queen").innerHTML);
+    function showInfo(e) {
+      // console.log(e.target.className);
+      if (e.target.className === "queen") {
+        document.querySelector(".info_name").textContent = chess[0].name;
+        document.querySelector(
+          ".info_value"
+        ).textContent = `Value: ${chess[0].value}`;
+        console.log(document.getElementsByClassName("queen"));
+      } else console.log(document.querySelector(".queen").innerHTML);
+    }
+  }
+  // console.log(allPieces);
 }
 
 // document.querySelector(".blk_rook").addEventListener("click", function () {
