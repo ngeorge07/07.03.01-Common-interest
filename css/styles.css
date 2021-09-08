@@ -5,6 +5,7 @@
   --light: #e2c4ce;
   --chess-piece: black;
   --max-width: calc(700px + 6 * ((50vw - 700px) / 40));
+  --move-max-width: 45vw;
 }
 
 body {
@@ -20,7 +21,7 @@ nav a:hover {
   transition: 0.2s;
 }
 
-nav ul {
+ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -77,20 +78,16 @@ button:hover {
   transition: 0.2s;
 }
 
-.move .grid {
-  grid-template-columns: repeat(5, 1fr);
-  margin: 1.5rem 0;
-}
-
 .index .grid {
   grid-template-columns: repeat(8, 1fr);
   margin: 1.5rem 0;
+  max-width: var(--max-width);
 }
 
 .grid {
   display: grid;
   grid-template-rows: auto;
-  max-width: var(--max-width);
+
   box-sizing: border-box;
   border: 1rem solid darken(var(--dark), 30%);
 }
@@ -118,14 +115,6 @@ button:hover {
   background-color: var(--dark);
 }
 
-.move .grid__item:nth-of-type(-2n + 5),
-.move .grid__item:nth-of-type(5) ~ *:nth-of-type(-2n + 9),
-.move .grid__item:nth-of-type(10) ~ *:nth-of-type(-2n + 15),
-.move .grid__item:nth-of-type(15) ~ *:nth-of-type(-2n + 19),
-.move .grid__item:nth-of-type(20) ~ *:nth-of-type(-2n + 25) {
-  background-color: var(--dark);
-}
-
 /*******************  
 INFORMATION CARD
 ********************/
@@ -147,7 +136,7 @@ img {
 }
 
 @media screen and (min-width: 950px) {
-  main {
+  .index {
     display: grid;
     gap: 2rem;
     grid-template-columns: 4fr 3fr;
@@ -160,4 +149,73 @@ img {
   nav {
     float: left;
   }
+
+  /*******************  
+MOVEMENTS PAGE
+********************/
+  .move {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+/*******************  
+MOVEMENTS PAGE
+********************/
+.move .grid {
+  grid-template-columns: repeat(5, 1fr);
+  margin: 1.5rem 0;
+  max-width: var(--move-max-width);
+}
+
+.newDiv {
+  font-size: calc(22px + (95 - 22) * ((100vw - 270px) / (3000 - 270)));
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: none;
+}
+
+.movePawn {
+  animation: movePawn 3s infinite;
+}
+
+@keyframes movePawn {
+  0%,
+  15% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -9vw);
+  }
+  100% {
+    transform: translate(0, -18vw);
+  }
+}
+
+.moveQueen {
+  animation: moveQueen 3s infinite;
+}
+
+@keyframes moveQueen {
+  0%,
+  15% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 9vw);
+  }
+  100% {
+    transform: translate(0, 18vw);
+  }
+}
+
+.move .grid__item:nth-of-type(-2n + 5),
+.move .grid__item:nth-of-type(5) ~ *:nth-of-type(-2n + 9),
+.move .grid__item:nth-of-type(10) ~ *:nth-of-type(-2n + 15),
+.move .grid__item:nth-of-type(15) ~ *:nth-of-type(-2n + 19),
+.move .grid__item:nth-of-type(20) ~ *:nth-of-type(-2n + 25) {
+  background-color: var(--dark);
 }
