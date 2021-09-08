@@ -32,38 +32,37 @@ function animations(chess) {
   origin.appendChild(newDiv);
 
   function showAnimation(e) {
-    console.log(e.target.className);
-
-    if (e.target.className === "pawn-piece") {
-      origin.firstChild.innerHTML = chess[2].codeblk;
-      origin.firstChild.setAttribute("class", "newDiv movePawn");
-
+    // console.log(e.target.className);
+    function deleteCircles() {
       if (document.querySelector(".circle")) {
         allCircles = document.querySelectorAll(".circle");
         for (i = 0; i < allCircles.length; i++) {
           allCircles[i].remove();
         }
       }
-
-      circles = [
-        document.querySelector(".grid__item:nth-of-type(3)"),
-        document.querySelector(".grid__item:nth-of-type(8)"),
-      ];
+    }
+    function addCircles() {
       for (i = 0; i < circles.length; i++) {
         newCircle = document.createElement("div");
         circles[i].appendChild(newCircle);
         circles[i].firstChild.setAttribute("class", "circle");
       }
+    }
+
+    if (e.target.className === "pawn-piece") {
+      origin.firstChild.innerHTML = chess[2].codeblk;
+      origin.firstChild.setAttribute("class", "newDiv movePawn");
+      deleteCircles();
+
+      circles = [
+        document.querySelector(".grid__item:nth-of-type(3)"),
+        document.querySelector(".grid__item:nth-of-type(8)"),
+      ];
+      addCircles();
     } else if (e.target.className === "rook-piece") {
       origin.firstChild.innerHTML = chess[4].codeblk;
       origin.firstChild.setAttribute("class", "newDiv moveRook");
-
-      if (document.querySelector(".circle")) {
-        allCircles = document.querySelectorAll(".circle");
-        for (i = 0; i < allCircles.length; i++) {
-          allCircles[i].remove();
-        }
-      }
+      deleteCircles();
 
       circles = [
         document.querySelector(".grid__item:nth-of-type(3)"),
@@ -75,12 +74,79 @@ function animations(chess) {
         document.querySelector(".grid__item:nth-of-type(18)"),
         document.querySelector(".grid__item:nth-of-type(23)"),
       ];
-      for (i = 0; i < circles.length; i++) {
-        newCircle = document.createElement("div");
-        circles[i].appendChild(newCircle);
-        circles[i].firstChild.setAttribute("class", "circle");
-      }
-    } else if (e.target.className === "rook-piece") {
+      addCircles();
+    } else if (e.target.className === "knight-piece") {
+      origin.firstChild.innerHTML = chess[1].codeblk;
+      origin.firstChild.setAttribute("class", "newDiv moveKnight");
+      deleteCircles();
+
+      circles = [
+        document.querySelector(".grid__item:nth-of-type(2)"),
+        document.querySelector(".grid__item:nth-of-type(4)"),
+        document.querySelector(".grid__item:nth-of-type(6)"),
+        document.querySelector(".grid__item:nth-of-type(16)"),
+        document.querySelector(".grid__item:nth-of-type(10)"),
+        document.querySelector(".grid__item:nth-of-type(20)"),
+        document.querySelector(".grid__item:nth-of-type(22)"),
+        document.querySelector(".grid__item:nth-of-type(24)"),
+      ];
+      addCircles();
+    } else if (e.target.className === "bishop-piece") {
+      origin.firstChild.innerHTML = chess[3].codeblk;
+      origin.firstChild.setAttribute("class", "newDiv moveBishop");
+      deleteCircles();
+
+      circles = [
+        document.querySelector(".grid__item:nth-of-type(1)"),
+        document.querySelector(".grid__item:nth-of-type(5)"),
+        document.querySelector(".grid__item:nth-of-type(7)"),
+        document.querySelector(".grid__item:nth-of-type(9)"),
+        document.querySelector(".grid__item:nth-of-type(17)"),
+        document.querySelector(".grid__item:nth-of-type(19)"),
+        document.querySelector(".grid__item:nth-of-type(21)"),
+        document.querySelector(".grid__item:nth-of-type(25)"),
+      ];
+      addCircles();
+    } else if (e.target.className === "queen-piece") {
+      origin.firstChild.innerHTML = chess[0].codeblk;
+      origin.firstChild.setAttribute("class", "newDiv moveQueen");
+      deleteCircles();
+
+      circles = [
+        document.querySelector(".grid__item:nth-of-type(1)"),
+        document.querySelector(".grid__item:nth-of-type(5)"),
+        document.querySelector(".grid__item:nth-of-type(7)"),
+        document.querySelector(".grid__item:nth-of-type(9)"),
+        document.querySelector(".grid__item:nth-of-type(17)"),
+        document.querySelector(".grid__item:nth-of-type(19)"),
+        document.querySelector(".grid__item:nth-of-type(21)"),
+        document.querySelector(".grid__item:nth-of-type(25)"),
+        document.querySelector(".grid__item:nth-of-type(3)"),
+        document.querySelector(".grid__item:nth-of-type(8)"),
+        document.querySelector(".grid__item:nth-of-type(11)"),
+        document.querySelector(".grid__item:nth-of-type(12)"),
+        document.querySelector(".grid__item:nth-of-type(14)"),
+        document.querySelector(".grid__item:nth-of-type(15)"),
+        document.querySelector(".grid__item:nth-of-type(18)"),
+        document.querySelector(".grid__item:nth-of-type(23)"),
+      ];
+      addCircles();
+    } else if (e.target.className === "king-piece") {
+      origin.firstChild.innerHTML = chess[5].codeblk;
+      origin.firstChild.setAttribute("class", "newDiv moveKing");
+      deleteCircles();
+
+      circles = [
+        document.querySelector(".grid__item:nth-of-type(7)"),
+        document.querySelector(".grid__item:nth-of-type(8)"),
+        document.querySelector(".grid__item:nth-of-type(9)"),
+        document.querySelector(".grid__item:nth-of-type(12)"),
+        document.querySelector(".grid__item:nth-of-type(14)"),
+        document.querySelector(".grid__item:nth-of-type(17)"),
+        document.querySelector(".grid__item:nth-of-type(18)"),
+        document.querySelector(".grid__item:nth-of-type(19)"),
+      ];
+      addCircles();
     }
   }
 }
