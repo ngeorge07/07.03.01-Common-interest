@@ -19,7 +19,6 @@ function animations(chess) {
   }
 
   const allPieces = document.querySelectorAll("button");
-  console.log(allPieces);
   for (let y = 0; y < allPieces.length; y++) {
     allPieces[y].addEventListener("click", showAnimation);
   }
@@ -34,9 +33,10 @@ function animations(chess) {
     if (e.target.className === "pawn-piece") {
       origin.firstChild.innerHTML = chess[2].codeblk;
       origin.firstChild.setAttribute("class", "newDiv movePawn");
-    } else if (e.target.className === "queen-piece") {
-      origin.firstChild.innerHTML = chess[0].codeblk;
-      origin.firstChild.setAttribute("class", "newDiv moveQueen");
+    } else if (e.target.className === "rook-piece") {
+      origin.firstChild.innerHTML = chess[4].codeblk;
+      origin.firstChild.setAttribute("class", "newDiv moveRook");
+      console.log("rook");
     }
   }
 }
