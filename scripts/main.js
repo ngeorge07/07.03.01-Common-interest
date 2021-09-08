@@ -179,12 +179,17 @@ function generateBoard(chess) {
 }
 
 function showInfo(piece) {
-  if (document.querySelector("button").classList.contains("queen")) {
-    document.querySelector(".info_name").textContent = piece[0].name;
-    document.querySelector(
-      ".info_value"
-    ).textContent = `Value: ${piece[0].value}`;
-  } else console.log(document.querySelector("button").classList);
+  if (
+    document.querySelector(".queen").innerHTML === "♚" ||
+    document.querySelector(".queen").innerHTML === "♚"
+  ) {
+    console.log("YESSSSSS");
+    // document.querySelector(".info_name").textContent = piece[0].name;
+    // document.querySelector(
+    //   ".info_value"
+    // ).textContent = `Value: ${piece[0].value}`;
+    // console.log(document.getElementsByClassName("queen"));
+  } else console.log(document.querySelector(".queen").innerHTML);
 }
 
 // document.querySelector(".blk_rook").addEventListener("click", function () {
