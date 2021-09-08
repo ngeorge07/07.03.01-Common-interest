@@ -1,7 +1,7 @@
 @import url("https://use.typekit.net/uja6frc.css");
 
 :root {
-  --dark: #db97a2;
+  --dark: #e884a5;
   --light: #e2c4ce;
   --max-width: calc(700px + 6 * ((50vw - 700px) / 40));
   --chess-piece: black;
@@ -130,7 +130,7 @@ img {
   display: flex;
   flex-direction: column;
 
-  background-color: hotpink;
+  background-color: #b099a1;
 }
 
 .info h2 {
