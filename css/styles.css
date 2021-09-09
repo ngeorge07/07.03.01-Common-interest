@@ -20,6 +20,11 @@ body {
   background-color: var(--brownpurple);
 }
 
+#active {
+  color: var(--dark);
+  opacity: 1;
+}
+
 /* NAV START */
 
 .nav-ul {
@@ -35,7 +40,7 @@ body {
 .navtext {
   text-decoration: none;
   color: var(--chess-piece);
-  font-size: calc(14px + (85 - 14) * ((100vw - 270px) / (3000 - 270)));
+  font-size: calc(22px + (85 - 22) * ((100vw - 270px) / (3000 - 270)));
 
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
@@ -223,17 +228,52 @@ MOVEMENTS PAGE
   padding-bottom: 1.5rem;
 }
 
+/*******************  
+RULES PAGE
+********************/
+.rules .info {
+  max-width: initial;
+  margin: 1.5rem 0;
+}
+
+.rules .info_name {
+  margin-left: 1.5rem;
+}
+
+.rules .info_desc {
+  margin-bottom: 1.5rem;
+}
+
+.rules h3 {
+  margin-left: 1.5rem;
+}
+
+.rules img {
+  width: 50%;
+  margin: 1.5rem 25%;
+}
+
+.rules article {
+  margin: 0;
+}
+
+.rules ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rules h1 {
+  color: var(--light);
+  text-shadow: 1px 1px var(--dark);
+}
+
 @media screen and (min-width: 1000px) {
   .index {
     display: grid;
     gap: 0rem;
     grid-template-columns: 4fr 3fr;
   }
-
-  /*  body {
-  display: grid;
-    grid-template-columns: 0.5fr 8fr; 
-  }*/
 
   .info {
     margin: 0 3rem 1.5rem 0;
@@ -273,10 +313,19 @@ MOVEMENTS PAGE
     margin-top: 3rem;
     margin-left: 1.5rem;
   }
+
+  /*******************  
+RULES PAGE
+********************/
 }
 
 @media screen and (min-width: 645px) {
   .info {
     border-radius: 2rem;
+  }
+
+  .rules .info {
+    margin-left: 5rem;
+    margin-right: 5rem;
   }
 }

@@ -12,123 +12,141 @@
     <header>
       <nav>
         <ul class="nav-ul">
-          <li><a href="#" class="navtext">First</a></li>
-          <li><a href="#" class="navtext">Second</a></li>
-          <li><a href="#" class="navtext">Third</a></li>
+          <li><a href="/index.html" class="navtext">Set-up</a></li>
+          <li>
+            <a href="movements.html" class="navtext">Movements</a>
+          </li>
+          <li>
+            <a href="rules.html" id="active" class="navtext">Rules</a>
+          </li>
         </ul>
       </nav>
     </header>
+    <main class="rules">
+      <div class="info">
+        <h1>Basic rules of chess explained</h1>
+        <ul>
+          <li>
+            <a class="navtext" href="#Setup">Learn how to setup the bord</a>
+          </li>
+          <li>
+            <a class="navtext" href="#Basic rules">Learn the basic rules</a>
+          </li>
+          <li>
+            <a class="navtext" href="#Check and checkmate">Learn how to win</a>
+          </li>
+          <li>
+            <a class="navtext" href="#Advanced rules"
+              >Learn a few advanced rules</a
+            >
+          </li>
+        </ul>
+        <article>
+          <h2 id="Setup" class="info_name">Setup</h2>
+          <p class="info_desc">
+            Chess is played by two players on a chess board measuring
+            eight-by-eight squares. The 64 squares alternate between light and
+            dark colours - traditionally, black and white. When properly set up,
+            a white square should be the rightmost square along the edge closest
+            to each player. Players’ pieces are set up in the two horizontal
+            rows (known as ranks) closest to each player. The second rank - ie.
+            the second row from the player’s perspective - consists of a line of
+            eight pawns, each placed on a single square. The closer rank is
+            nearly symmetrical, with rooks (also known as castles) placed on the
+            two leftmost and rightmost corner squares, followed by knights on
+            the inside space next to them, then bishops. The two central squares
+            of the rank are occupied by the king and queen. The queen is placed
+            on the square matching her colour (for example, the black queen on
+            the black square), with the king occupying the remaining square of
+            the opposite colour. This means that the king and queen of each
+            colour face each other, making the correct setup symmetrical between
+            the two players. The white player takes the first move, with players
+            alternating single turns until a player is defeated via checkmate or
+            resigns. A draw can also be agreed. If playing with an optional
+            timer, as in tournaments, the first player to run out of time
+            forfeits the game.
+          </p>
+          <img
+            src="https://www.regencychess.co.uk/images/how-to-set-up-a-chessboard/how-to-set-up-a-chessboard-7.jpg"
+            alt="Chess bord"
+          />
+          <h3>Algebraic notation (or AN)</h3>
+          <p class="info_desc">
+            Is the standard method for recording and describing the moves in a
+            game of chess. It is based on a system of coordinates to uniquely
+            identify each square on the chessboard. (On the picture above the
+            white Queen are standing on d1)
+          </p>
+        </article>
 
-    <h1>Basic rules of chess explained</h1>
-    <ul>
-      <li><a href="#Setup">Learn how to setup the bord</a>.</li>
-      <li><a href="#Basic rules">Learn the basic rules</a>.</li>
-      <li><a href="#Check and checkmate">Learn how to win</a>.</li>
-      <li><a href="#Advanced rules">Learn a few advanced rules</a>.</li>
-    </ul>
-    <article>
-      <a id="setup"></a>
-      <h2>setup:</h2>
-      <p>
-        Chess is played by two players on a chess board measuring eight-by-eight
-        squares. The 64 squares alternate between light and dark colours -
-        traditionally, black and white. When properly set up, a white square
-        should be the rightmost square along the edge closest to each player.
-        Players’ pieces are set up in the two horizontal rows (known as ranks)
-        closest to each player. The second rank - ie. the second row from the
-        player’s perspective - consists of a line of eight pawns, each placed on
-        a single square. The closer rank is nearly symmetrical, with rooks (also
-        known as castles) placed on the two leftmost and rightmost corner
-        squares, followed by knights on the inside space next to them, then
-        bishops. The two central squares of the rank are occupied by the king
-        and queen. The queen is placed on the square matching her colour (for
-        example, the black queen on the black square), with the king occupying
-        the remaining square of the opposite colour. This means that the king
-        and queen of each colour face each other, making the correct setup
-        symmetrical between the two players. The white player takes the first
-        move, with players alternating single turns until a player is defeated
-        via checkmate or resigns. A draw can also be agreed. If playing with an
-        optional timer, as in tournaments, the first player to run out of time
-        forfeits the game.
-      </p>
-      <img
-        src="https://www.regencychess.co.uk/images/how-to-set-up-a-chessboard/how-to-set-up-a-chessboard-7.jpg"
-        alt="Chess bord"
-      />
-      <h3>Algebraic notation (or AN)</h3>
-      <p>
-        Is the standard method for recording and describing the moves in a game
-        of chess. It is based on a system of coordinates to uniquely identify
-        each square on the chessboard. (On the picture above the white Queen are
-        standing on d1)
-      </p>
-    </article>
-
-    <article>
-      <a id="Basic rules"></a>
-      <h2>Basic rules:</h2>
-      <p>
-        In chess, each player takes turns to make a single move. Players cannot
-        choose to skip a turn - they must move a piece. Each chess piece moves
-        in a specific way, and must be moved according to its legal movement.
-        Except for the knight, which may jump over pieces, pieces cannot move
-        through pieces of either colour without either stopping (in the same of
-        a piece of the same colour) or capturing them (in the case of a piece of
-        the opposite colour).
-      </p>
-      <h3>Capturing pieces</h3>
-      <p>
-        If a piece lands on a space with an opponent’s piece, that piece is
-        captured and removed from the board. Pieces cannot be placed on the same
-        square as a piece of the same colour. When a piece captures an
-        opponent’s piece, it must finish its current move action and end the
-        player’s turn.
-      </p>
-    </article>
-    <article>
-      <a id="Check and checkmate"></a>
-      <h2>Check and checkmate:</h2>
-      <p>
-        When a piece moves in a way that would allow a player to capture the
-        opponent’s king on their next turn, the attacking player typically
-        announces “check”. The player placed into check must move their king or
-        move another piece to stop the attack on their next turn - either by
-        blocking the move or capturing the attacking piece. If a player creates
-        a situation where their opponent cannot stop their king from being
-        captured on the next turn, the attacking player announces “checkmate”
-        and immediately wins the game. The king is never captured - a game of
-        chess is won when a successful checkmate is announced. A player can also
-        choose to resign, granting their opponent the victory. Matches can also
-        end in an agreed draw - for example, as the result of stalemate leaving
-        a player without any legal moves, or if no player can win using
-        available legal moves, a situation known as a “dead position”. One
-        example of a dead position is when both players are left with their king
-        as their only remaining piece on the board. Draws can also occur as the
-        result of advanced rules typically used in professional tournaments,
-        including identical board positions occurring three or five times -
-        rules known respectively as threefold repetition and fivefold repetition
-        - or no captures or pawn moves taking place within the last 50 or 75
-        moves. The exact rules used can depend on the tournament and agreement
-        between the players.
-      </p>
-    </article>
-    <article>
-      <a id="Advanced rules"></a>
-      <h2>Advanced rules:</h2>
-      <p>
-        There are a number of advanced rules that can be used in chess, along
-        with specific openings and board positions known by a variety of names,
-        from the Double King's Pawn Opening to the famous King’s Gambit and
-        Queen’s Gambit. Advanced rules can include specific variants that alter
-        the core rules of the game, along with surrounding requirements often
-        used in tournament settings, such as timing and the touch-move rule -
-        which states that once a piece is touched by a player, it must make a
-        legal move. As this is a beginner’s guide to learning chess, we’ll only
-        be covering some of the essential advanced rules here - rules that
-        should always be used in conjunction with the basic rules for moving and
-        capturing pieces, as well as the standard setup and rules for declaring
-        checkmate.
-      </p>
-    </article>
+        <article>
+          <a id="Basic rules"></a>
+          <h2 class="info_name">Basic rules:</h2>
+          <p class="info_desc">
+            In chess, each player takes turns to make a single move. Players
+            cannot choose to skip a turn - they must move a piece. Each chess
+            piece moves in a specific way, and must be moved according to its
+            legal movement. Except for the knight, which may jump over pieces,
+            pieces cannot move through pieces of either colour without either
+            stopping (in the same of a piece of the same colour) or capturing
+            them (in the case of a piece of the opposite colour).
+          </p>
+          <h3>Capturing pieces</h3>
+          <p class="info_desc">
+            If a piece lands on a space with an opponent’s piece, that piece is
+            captured and removed from the board. Pieces cannot be placed on the
+            same square as a piece of the same colour. When a piece captures an
+            opponent’s piece, it must finish its current move action and end the
+            player’s turn.
+          </p>
+        </article>
+        <article>
+          <a id="Check and checkmate"></a>
+          <h2 class="info_name">Check and checkmate:</h2>
+          <p class="info_desc">
+            When a piece moves in a way that would allow a player to capture the
+            opponent’s king on their next turn, the attacking player typically
+            announces “check”. The player placed into check must move their king
+            or move another piece to stop the attack on their next turn - either
+            by blocking the move or capturing the attacking piece. If a player
+            creates a situation where their opponent cannot stop their king from
+            being captured on the next turn, the attacking player announces
+            “checkmate” and immediately wins the game. The king is never
+            captured - a game of chess is won when a successful checkmate is
+            announced. A player can also choose to resign, granting their
+            opponent the victory. Matches can also end in an agreed draw - for
+            example, as the result of stalemate leaving a player without any
+            legal moves, or if no player can win using available legal moves, a
+            situation known as a “dead position”. One example of a dead position
+            is when both players are left with their king as their only
+            remaining piece on the board. Draws can also occur as the result of
+            advanced rules typically used in professional tournaments, including
+            identical board positions occurring three or five times - rules
+            known respectively as threefold repetition and fivefold repetition -
+            or no captures or pawn moves taking place within the last 50 or 75
+            moves. The exact rules used can depend on the tournament and
+            agreement between the players.
+          </p>
+        </article>
+        <article>
+          <a id="Advanced rules"></a>
+          <h2 class="info_name">Advanced rules:</h2>
+          <p class="info_desc">
+            There are a number of advanced rules that can be used in chess,
+            along with specific openings and board positions known by a variety
+            of names, from the Double King's Pawn Opening to the famous King’s
+            Gambit and Queen’s Gambit. Advanced rules can include specific
+            variants that alter the core rules of the game, along with
+            surrounding requirements often used in tournament settings, such as
+            timing and the touch-move rule - which states that once a piece is
+            touched by a player, it must make a legal move. As this is a
+            beginner’s guide to learning chess, we’ll only be covering some of
+            the essential advanced rules here - rules that should always be used
+            in conjunction with the basic rules for moving and capturing pieces,
+            as well as the standard setup and rules for declaring checkmate.
+          </p>
+        </article>
+      </div>
+    </main>
   </body>
 </html>
