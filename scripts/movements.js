@@ -11,13 +11,6 @@ fetch(url, options)
   .then((data) => animations(data));
 
 function animations(chess) {
-  for (let i = 0; i < 25; i++) {
-    const template = document.querySelector("template").content;
-    const clone = template.cloneNode(true);
-
-    document.querySelector(".grid").appendChild(clone);
-  }
-
   const allPieces = document.querySelectorAll("button");
   for (let y = 0; y < allPieces.length; y++) {
     allPieces[y].addEventListener("click", showAnimation);
