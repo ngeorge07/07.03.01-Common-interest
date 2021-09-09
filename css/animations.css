@@ -1,7 +1,6 @@
 /*******************  
 MOVEMENTS PAGE
 ********************/
-
 .newDiv {
   font-size: calc(22px + (95 - 22) * ((100vw - 270px) / (3000 - 270)));
   grid-area: 1 / 1 / 2 / 2;
@@ -23,6 +22,9 @@ MOVEMENTS PAGE
   opacity: 0.8;
 }
 
+/*******************  
+PAWN ANIMATION
+********************/
 .movePawn {
   animation: movePawn 3s infinite;
 }
@@ -40,6 +42,9 @@ MOVEMENTS PAGE
   }
 }
 
+/*******************  
+ROOK ANIMATION
+********************/
 .moveRook {
   animation: moveRook 12s infinite;
 }
@@ -68,6 +73,9 @@ MOVEMENTS PAGE
   }
 }
 
+/*******************  
+KNIGHT ANIMATION
+********************/
 .moveKnight {
   animation: moveKnight 20s infinite;
 }
@@ -141,6 +149,9 @@ MOVEMENTS PAGE
   }
 }
 
+/*******************  
+BISHOP ANIMATION
+********************/
 .moveBishop {
   animation: moveBishop 11s infinite;
 }
@@ -169,6 +180,9 @@ MOVEMENTS PAGE
   }
 }
 
+/*******************  
+QUEEN ANIMATION
+********************/
 .moveQueen {
   animation: moveQueen 16s infinite;
 }
@@ -214,6 +228,9 @@ MOVEMENTS PAGE
   }
 }
 
+/*******************  
+KING ANIMATION
+********************/
 .moveKing {
   animation: moveKing 16s infinite;
 }
