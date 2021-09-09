@@ -1,0 +1,277 @@
+/*******************  
+MOVEMENTS PAGE
+********************/
+.move .grid {
+  grid-template-columns: repeat(5, 1fr);
+  margin: 1.5rem 0;
+  max-width: var(--move-max-width);
+}
+
+.newDiv {
+  font-size: calc(22px + (95 - 22) * ((100vw - 270px) / (3000 - 270)));
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: none;
+  z-index: 2;
+}
+
+.circle {
+  grid-area: 1 / 1 / 2 / 2;
+  align-self: center;
+  justify-self: center;
+  width: 6vw;
+  height: 6vw;
+  background-color: #bbb;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+
+.movePawn {
+  animation: movePawn 3s infinite;
+}
+@keyframes movePawn {
+  0%,
+  15%,
+  100% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -9vw);
+  }
+  80% {
+    transform: translate(0, -18vw);
+  }
+}
+
+.moveRook {
+  animation: moveRook 12s infinite;
+}
+@keyframes moveRook {
+  0%,
+  10%,
+  25%,
+  35%,
+  40%,
+  45%,
+  65%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(0, -18vw);
+  }
+  30% {
+    transform: translate(0, 18vw);
+  }
+  55% {
+    transform: translate(-18vw, 0);
+  }
+  70% {
+    transform: translate(18vw, 0);
+  }
+}
+
+.moveKnight {
+  animation: moveKnight 20s infinite;
+}
+@keyframes moveKnight {
+  0%,
+  3%,
+  15%,
+  27%,
+  39%,
+  51%,
+  63%,
+  75%,
+  87%,
+  100% {
+    transform: translate(0, 0);
+  }
+  6%,
+  12%,
+  18%,
+  24% {
+    transform: translate(0, -18vw);
+  }
+  9%,
+  11% {
+    transform: translate(-9vw, -18vw);
+  }
+  21%,
+  23% {
+    transform: translate(9vw, -18vw);
+  }
+  30%,
+  36%,
+  42%,
+  48% {
+    transform: translate(18vw, 0);
+  }
+  33%,
+  35% {
+    transform: translate(18vw, -9vw);
+  }
+  45%,
+  47% {
+    transform: translate(18vw, 9vw);
+  }
+  54%,
+  60%,
+  66%,
+  72% {
+    transform: translate(0, 18vw);
+  }
+  57%,
+  59% {
+    transform: translate(9vw, 18vw);
+  }
+  69% /*noice*/, 71% {
+    transform: translate(-9vw, 18vw);
+  }
+  78%,
+  84%,
+  90%,
+  96% {
+    transform: translate(-18vw, 0);
+  }
+  81%,
+  83% {
+    transform: translate(-18vw, 9vw);
+  }
+  93%,
+  95% {
+    transform: translate(-18vw, -9vw);
+  }
+}
+
+.moveBishop {
+  animation: moveBishop 11s infinite;
+}
+@keyframes moveBishop {
+  0%,
+  10%,
+  25%,
+  35%,
+  40%,
+  45%,
+  65%,
+  100% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(-18vw, -18vw);
+  }
+  30% {
+    transform: translate(18vw, 18vw);
+  }
+  60% {
+    transform: translate(18vw, -18vw);
+  }
+  70% {
+    transform: translate(-18vw, 18vw);
+  }
+}
+
+.moveQueen {
+  animation: moveQueen 16s infinite;
+}
+@keyframes moveQueen {
+  0%,
+  6%,
+  15%,
+  24%,
+  30%,
+  39%,
+  48%,
+  54%,
+  63%,
+  72%,
+  78%,
+  87%,
+  100% {
+    transform: translate(0, 0);
+  }
+  12% {
+    transform: translate(0, -18vw);
+  }
+  18% {
+    transform: translate(0, 18vw);
+  }
+  36% {
+    transform: translate(-18vw, 0);
+  }
+  42% {
+    transform: translate(18vw, 0);
+  }
+  60% {
+    transform: translate(-18vw, -18vw);
+  }
+  66% {
+    transform: translate(18vw, 18vw);
+  }
+  84% {
+    transform: translate(18vw, -18vw);
+  }
+  90% {
+    transform: translate(-18vw, 18vw);
+  }
+}
+
+.moveKing {
+  animation: moveKing 16s infinite;
+}
+@keyframes moveKing {
+  0%,
+  6%,
+  14%,
+  15%,
+  24%,
+  30%,
+  38%,
+  39%,
+  48%,
+  54%,
+  62%,
+  63%,
+  72%,
+  78%,
+  86%,
+  87%,
+  100% {
+    transform: translate(0, 0);
+  }
+  12% {
+    transform: translate(0, -9vw);
+  }
+  18% {
+    transform: translate(0, 9vw);
+  }
+  36% {
+    transform: translate(-9vw, 0);
+  }
+  42% {
+    transform: translate(9vw, 0);
+  }
+  60% {
+    transform: translate(9vw, -9vw);
+  }
+  66% {
+    transform: translate(-9vw, 9vw);
+  }
+  84% {
+    transform: translate(-9vw, -9vw);
+  }
+  90% {
+    transform: translate(9vw, 9vw);
+  }
+}
+
+.move .grid__item:nth-of-type(-2n + 5),
+.move .grid__item:nth-of-type(5) ~ *:nth-of-type(-2n + 9),
+.move .grid__item:nth-of-type(10) ~ *:nth-of-type(-2n + 15),
+.move .grid__item:nth-of-type(15) ~ *:nth-of-type(-2n + 19),
+.move .grid__item:nth-of-type(20) ~ *:nth-of-type(-2n + 25) {
+  background-color: var(--dark);
+}

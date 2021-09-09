@@ -27,17 +27,31 @@ nav a:hover {
   transition: 0.2s;
 }
 
-ul {
-  list-style-type: none;
-  margin: 0;
+.nav-ul {
+  display: flex;
+  flex-direction: row;
   padding: 0;
+  list-style-type: none;
+  /* width: 100%; */
+  justify-content: center;
+  gap: 1.5rem;
 }
 
 .navtext {
+  text-decoration: none;
+  color: var(--chess-piece);
+  font-size: calc(14px + (85 - 14) * ((100vw - 270px) / (3000 - 270)));
+
+  grid-area: 1 / 1 / 2 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+
   color: white;
   font-family: lust, serif;
   font-weight: 700;
-  text-shadow: 2px 2px var(--light);
+  text-shadow: 1px 1px var(--light);
   background-color: var(--dusty);
   padding: 10px;
   margin: 10px;
@@ -46,19 +60,7 @@ ul {
 
 /* NAV END */
 
-a {
-  text-decoration: none;
-  color: var(--chess-piece);
-  /* font-size: calc(2vw + 2vh + 1vmin); */
-  font-size: 2vw;
-  grid-area: 1 / 1 / 2 / 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.7;
-}
-
-a:hover {
+.navtext:hover {
   opacity: 1;
   transition: 0.2s;
 }
@@ -86,8 +88,9 @@ button:hover {
 
 .index .grid {
   grid-template-columns: repeat(8, 1fr);
-  margin: 1.5rem 0;
+  margin: 1.5rem 1.5rem 1.5rem 0;
   max-width: var(--max-width);
+  margin: 0 auto 0 auto;
 }
 
 .grid {
@@ -125,7 +128,7 @@ button:hover {
 INFORMATION CARD
 ********************/
 img {
-  max-width: 70%;
+  width: calc(30px + (95 - 30) * ((100vw - 270px) / (3000 - 270)));
   align-self: center;
 }
 
@@ -134,17 +137,26 @@ img {
   display: flex;
   flex-direction: column;
 
+  justify-content: center;
+
   background-color: #b099a1;
   align-items: center;
   font-size: 1.2rem;
-  border-radius: 2rem;
-  margin: 2rem;
+
+  max-width: var(--max-width);
+  margin: 2rem auto 2rem auto;
 }
 
-.info h2 {
+.info_name {
   align-self: center;
   font-family: lust;
   font-size: 3rem;
+  margin: 1rem 0;
+}
+
+.info h3 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
 }
 
 .info > h3,
@@ -152,22 +164,42 @@ p {
   font-family: Dolly-new, sans-serif;
 }
 
-.info > p {
-  margin: 3rem;
+.info_desc {
+  margin: 0 1.5rem;
 }
-@media screen and (min-width: 950px) {
+
+.info_value {
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 1000px) {
   .index {
     display: grid;
-    gap: 2rem;
+    gap: 0rem;
     grid-template-columns: 4fr 3fr;
   }
 
+  /*  body {
+  display: grid;
+    grid-template-columns: 0.5fr 8fr; 
+  }*/
+
   .info {
-    margin: 1.5rem 2rem 1.5rem 0;
+    margin: 0 3rem 1.5rem 0;
   }
 
-  nav {
-    float: left;
+  .index .grid {
+    max-height: 50vw;
+    margin: 0 1.5rem 1.5rem 3rem;
+  }
+
+  .nav-ul {
+    margin-right: 0;
+    margin-top: 0.8rem;
+    padding: 0;
+    gap: 1rem;
+    justify-content: left;
+    margin-left: 2.2rem;
   }
 
   /*******************  
@@ -180,280 +212,8 @@ MOVEMENTS PAGE
   }
 }
 
-/*******************  
-MOVEMENTS PAGE
-********************/
-.move .grid {
-  grid-template-columns: repeat(5, 1fr);
-  margin: 1.5rem 0;
-  max-width: var(--move-max-width);
-}
-
-.newDiv {
-  font-size: calc(22px + (95 - 22) * ((100vw - 270px) / (3000 - 270)));
-  grid-area: 1 / 1 / 2 / 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: none;
-  z-index: 2;
-}
-
-.circle {
-  grid-area: 1 / 1 / 2 / 2;
-  align-self: center;
-  justify-self: center;
-  width: 6vw;
-  height: 6vw;
-  background-color: #bbb;
-  border-radius: 50%;
-  opacity: 0.8;
-}
-
-.movePawn {
-  animation: movePawn 3s infinite;
-}
-@keyframes movePawn {
-  0%,
-  15%,
-  100% {
-    transform: translate(0, 0);
+@media screen and (min-width: 645px) {
+  .info {
+    border-radius: 2rem;
   }
-  50% {
-    transform: translate(0, -9vw);
-  }
-  80% {
-    transform: translate(0, -18vw);
-  }
-}
-
-.moveRook {
-  animation: moveRook 12s infinite;
-}
-@keyframes moveRook {
-  0%,
-  10%,
-  25%,
-  35%,
-  40%,
-  45%,
-  65%,
-  100% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(0, -18vw);
-  }
-  30% {
-    transform: translate(0, 18vw);
-  }
-  55% {
-    transform: translate(-18vw, 0);
-  }
-  70% {
-    transform: translate(18vw, 0);
-  }
-}
-
-.moveKnight {
-  animation: moveKnight 20s infinite;
-}
-@keyframes moveKnight {
-  0%,
-  3%,
-  15%,
-  27%,
-  39%,
-  51%,
-  63%,
-  75%,
-  87%,
-  100% {
-    transform: translate(0, 0);
-  }
-  6%,
-  12%,
-  18%,
-  24% {
-    transform: translate(0, -18vw);
-  }
-  9%,
-  11% {
-    transform: translate(-9vw, -18vw);
-  }
-  21%,
-  23% {
-    transform: translate(9vw, -18vw);
-  }
-  30%,
-  36%,
-  42%,
-  48% {
-    transform: translate(18vw, 0);
-  }
-  33%,
-  35% {
-    transform: translate(18vw, -9vw);
-  }
-  45%,
-  47% {
-    transform: translate(18vw, 9vw);
-  }
-  54%,
-  60%,
-  66%,
-  72% {
-    transform: translate(0, 18vw);
-  }
-  57%,
-  59% {
-    transform: translate(9vw, 18vw);
-  }
-  69% /*noice*/, 71% {
-    transform: translate(-9vw, 18vw);
-  }
-  78%,
-  84%,
-  90%,
-  96% {
-    transform: translate(-18vw, 0);
-  }
-  81%,
-  83% {
-    transform: translate(-18vw, 9vw);
-  }
-  93%,
-  95% {
-    transform: translate(-18vw, -9vw);
-  }
-}
-
-.moveBishop {
-  animation: moveBishop 11s infinite;
-}
-@keyframes moveBishop {
-  0%,
-  10%,
-  25%,
-  35%,
-  40%,
-  45%,
-  65%,
-  100% {
-    transform: translate(0, 0);
-  }
-  20% {
-    transform: translate(-18vw, -18vw);
-  }
-  30% {
-    transform: translate(18vw, 18vw);
-  }
-  60% {
-    transform: translate(18vw, -18vw);
-  }
-  70% {
-    transform: translate(-18vw, 18vw);
-  }
-}
-
-.moveQueen {
-  animation: moveQueen 16s infinite;
-}
-@keyframes moveQueen {
-  0%,
-  6%,
-  15%,
-  24%,
-  30%,
-  39%,
-  48%,
-  54%,
-  63%,
-  72%,
-  78%,
-  87%,
-  100% {
-    transform: translate(0, 0);
-  }
-  12% {
-    transform: translate(0, -18vw);
-  }
-  18% {
-    transform: translate(0, 18vw);
-  }
-  36% {
-    transform: translate(-18vw, 0);
-  }
-  42% {
-    transform: translate(18vw, 0);
-  }
-  60% {
-    transform: translate(-18vw, -18vw);
-  }
-  66% {
-    transform: translate(18vw, 18vw);
-  }
-  84% {
-    transform: translate(18vw, -18vw);
-  }
-  90% {
-    transform: translate(-18vw, 18vw);
-  }
-}
-
-.moveKing {
-  animation: moveKing 16s infinite;
-}
-@keyframes moveKing {
-  0%,
-  6%,
-  14%,
-  15%,
-  24%,
-  30%,
-  38%,
-  39%,
-  48%,
-  54%,
-  62%,
-  63%,
-  72%,
-  78%,
-  86%,
-  87%,
-  100% {
-    transform: translate(0, 0);
-  }
-  12% {
-    transform: translate(0, -9vw);
-  }
-  18% {
-    transform: translate(0, 9vw);
-  }
-  36% {
-    transform: translate(-9vw, 0);
-  }
-  42% {
-    transform: translate(9vw, 0);
-  }
-  60% {
-    transform: translate(9vw, -9vw);
-  }
-  66% {
-    transform: translate(-9vw, 9vw);
-  }
-  84% {
-    transform: translate(-9vw, -9vw);
-  }
-  90% {
-    transform: translate(9vw, 9vw);
-  }
-}
-
-.move .grid__item:nth-of-type(-2n + 5),
-.move .grid__item:nth-of-type(5) ~ *:nth-of-type(-2n + 9),
-.move .grid__item:nth-of-type(10) ~ *:nth-of-type(-2n + 15),
-.move .grid__item:nth-of-type(15) ~ *:nth-of-type(-2n + 19),
-.move .grid__item:nth-of-type(20) ~ *:nth-of-type(-2n + 25) {
-  background-color: var(--dark);
 }

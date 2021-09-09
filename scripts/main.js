@@ -25,12 +25,12 @@ function generateBoard(chess) {
   /************************ 
    MAKE BOARD OUT OF GRID ITEMS
   *************************/
-  for (let i = 0; i < 64; i++) {
-    const template = document.querySelector("template").content;
-    const clone = template.cloneNode(true);
+  // for (let i = 0; i < 64; i++) {
+  //   const template = document.querySelector("template").content;
+  //   const clone = template.cloneNode(true);
 
-    document.querySelector(".grid").appendChild(clone);
-  }
+  //   document.querySelector(".grid").appendChild(clone);
+  // }
 
   /************************ 
    PLACE EACH SET OF PIECES INTO THE RIGHT GRID SPACE
