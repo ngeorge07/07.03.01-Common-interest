@@ -32,7 +32,7 @@ function animations(chess) {
   origin.appendChild(newDiv);
 
   function showAnimation(e) {
-    // console.log(e.target.className);
+    console.log(e.target.className);
     function deleteCircles() {
       if (document.querySelector(".circle")) {
         allCircles = document.querySelectorAll(".circle");
@@ -49,7 +49,7 @@ function animations(chess) {
       }
     }
 
-    if (e.target.className === "pawn-piece") {
+    if (e.target.className === "moveb pawn-piece") {
       origin.firstChild.innerHTML = chess[5].codeblk;
       origin.firstChild.setAttribute("class", "newDiv movePawn");
       deleteCircles();
@@ -59,7 +59,7 @@ function animations(chess) {
         document.querySelector(".grid__item:nth-of-type(8)"),
       ];
       addCircles();
-    } else if (e.target.className === "rook-piece") {
+    } else if (e.target.className === "moveb rook-piece") {
       origin.firstChild.innerHTML = chess[4].codeblk;
       origin.firstChild.setAttribute("class", "newDiv moveRook");
       deleteCircles();
@@ -75,7 +75,7 @@ function animations(chess) {
         document.querySelector(".grid__item:nth-of-type(23)"),
       ];
       addCircles();
-    } else if (e.target.className === "knight-piece") {
+    } else if (e.target.className === "moveb knight-piece") {
       origin.firstChild.innerHTML = chess[2].codeblk;
       origin.firstChild.setAttribute("class", "newDiv moveKnight");
       deleteCircles();
@@ -91,7 +91,7 @@ function animations(chess) {
         document.querySelector(".grid__item:nth-of-type(24)"),
       ];
       addCircles();
-    } else if (e.target.className === "bishop-piece") {
+    } else if (e.target.className === "moveb bishop-piece") {
       origin.firstChild.innerHTML = chess[0].codeblk;
       origin.firstChild.setAttribute("class", "newDiv moveBishop");
       deleteCircles();
@@ -107,7 +107,7 @@ function animations(chess) {
         document.querySelector(".grid__item:nth-of-type(25)"),
       ];
       addCircles();
-    } else if (e.target.className === "queen-piece") {
+    } else if (e.target.className === "moveb queen-piece") {
       origin.firstChild.innerHTML = chess[1].codeblk;
       origin.firstChild.setAttribute("class", "newDiv moveQueen");
       deleteCircles();
@@ -131,7 +131,7 @@ function animations(chess) {
         document.querySelector(".grid__item:nth-of-type(23)"),
       ];
       addCircles();
-    } else if (e.target.className === "king-piece") {
+    } else if (e.target.className === "moveb king-piece") {
       origin.firstChild.innerHTML = chess[3].codeblk;
       origin.firstChild.setAttribute("class", "newDiv moveKing");
       deleteCircles();

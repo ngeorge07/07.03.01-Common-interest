@@ -14,7 +14,7 @@
     </template>
     <header>
       <nav>
-        <ul>
+        <ul class="nav-ul">
           <li><a href="#" class="navtext">Set-up</a></li>
           <li><a href="#" class="navtext">Movements</a></li>
           <li><a href="#" class="navtext">Rules</a></li>
@@ -22,13 +22,19 @@
       </nav>
     </header>
     <main class="move">
-      <ul>
-        <li><button class="pawn-piece">&#9823;</button></li>
-        <li><button class="rook-piece">&#9820;</button></li>
-        <li><button class="knight-piece">&#9822;</button></li>
-        <li><button class="bishop-piece">&#9821;</button></li>
-        <li><button class="queen-piece">&#9819;</button></li>
-        <li><button class="king-piece">&#9818;</button></li>
+      <article class="info">
+        <h2 class="info_name">Instructions</h2>
+        <p class="info_desc">
+          Click a piece to see all the possible moves it can make.
+        </p>
+      </article>
+      <ul class="move-ul">
+        <li><button class="moveb pawn-piece">&#9823;</button></li>
+        <li><button class="moveb rook-piece">&#9820;</button></li>
+        <li><button class="moveb knight-piece">&#9822;</button></li>
+        <li><button class="moveb bishop-piece">&#9821;</button></li>
+        <li><button class="moveb queen-piece">&#9819;</button></li>
+        <li><button class="moveb king-piece">&#9818;</button></li>
       </ul>
 
       <div class="grid"></div>

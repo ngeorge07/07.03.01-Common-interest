@@ -1,11 +1,6 @@
 /*******************  
 MOVEMENTS PAGE
 ********************/
-.move .grid {
-  grid-template-columns: repeat(5, 1fr);
-  margin: 1.5rem 0;
-  max-width: var(--move-max-width);
-}
 
 .newDiv {
   font-size: calc(22px + (95 - 22) * ((100vw - 270px) / (3000 - 270)));
