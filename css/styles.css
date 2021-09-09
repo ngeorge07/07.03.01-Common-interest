@@ -1,5 +1,7 @@
 /* @import url("https://use.typekit.net/uja6frc.css"); */
-
+html {
+  scroll-behavior: smooth;
+}
 :root {
   --dark: #e884a5;
   --light: #e2c4ce;
@@ -31,7 +33,8 @@ ul {
   padding: 0;
 }
 
-nav ul li {
+.navtext {
+  color: white;
   font-family: lust, serif;
   font-weight: 700;
   text-shadow: 2px 2px var(--light);
@@ -39,10 +42,6 @@ nav ul li {
   padding: 10px;
   margin: 10px;
   border-radius: 20px;
-}
-
-.navtext {
-  color: white;
 }
 
 /* NAV END */
