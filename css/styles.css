@@ -25,21 +25,20 @@ body {
   opacity: 1;
 }
 
-/* NAV START */
-
+/****************** 
+NAV START 
+********************/
 .nav-ul {
   display: flex;
   flex-direction: row;
   padding: 0;
   list-style-type: none;
-  /* width: 100%; */
   justify-content: center;
   gap: 1.5rem;
 }
 
 .navtext {
   text-decoration: none;
-  color: var(--chess-piece);
   font-size: calc(22px + (85 - 22) * ((100vw - 270px) / (3000 - 270)));
 
   grid-area: 1 / 1 / 2 / 2;
@@ -58,17 +57,17 @@ body {
   border-radius: 20px;
 }
 
-/* NAV END */
-
 .navtext:hover {
   opacity: 1;
   transition: 0.2s;
 }
+/****************** 
+NAV END 
+********************/
 
 button {
   text-decoration: none;
   color: var(--chess-piece);
-  /* font-size: calc(2vw + 2vh + 1vmin); */
   font-size: calc(22px + (95 - 22) * ((100vw - 270px) / (3000 - 270)));
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
@@ -86,6 +85,10 @@ button:hover {
   transition: 0.2s;
 }
 
+/****************** 
+INDEX START 
+********************/
+
 .index .grid {
   grid-template-columns: repeat(8, 1fr);
   max-width: var(--max-width);
@@ -94,9 +97,6 @@ button:hover {
 .grid {
   display: grid;
   grid-template-rows: auto;
-
-  margin: 1.5rem 1.5rem 1.5rem 0;
-
   margin: 0 auto 0 auto;
 
   box-sizing: border-box;
@@ -173,9 +173,12 @@ p {
 .info_value {
   margin-top: 1.5rem;
 }
+/****************** 
+INDEX END
+********************/
 
 /*******************  
-MOVEMENTS PAGE
+MOVEMENTS PAGE START
 ********************/
 .move .grid {
   grid-template-columns: repeat(5, 1fr);
@@ -227,9 +230,12 @@ MOVEMENTS PAGE
 .move .info_desc {
   padding-bottom: 1.5rem;
 }
+/*******************  
+MOVEMENTS PAGE END
+********************/
 
 /*******************  
-RULES PAGE
+RULES PAGE START
 ********************/
 .rules .info {
   max-width: initial;
@@ -267,6 +273,13 @@ RULES PAGE
   color: var(--light);
   text-shadow: 1px 1px var(--dark);
 }
+/*******************  
+RULES PAGE END
+********************/
+
+/*******************  
+MEDIA QUERIES
+********************/
 
 @media screen and (min-width: 1000px) {
   .index {
@@ -313,10 +326,6 @@ MOVEMENTS PAGE
     margin-top: 3rem;
     margin-left: 1.5rem;
   }
-
-  /*******************  
-RULES PAGE
-********************/
 }
 
 @media screen and (min-width: 645px) {
