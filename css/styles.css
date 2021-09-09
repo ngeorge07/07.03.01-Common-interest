@@ -38,10 +38,9 @@ li {
   font-weight: 700;
   text-shadow: 2px 2px var(--light);
   background-color: var(--dusty);
-  border-style: solid;
-  border-color: black;
   padding: 10px;
   margin: 10px;
+  border-radius: 20px;
 }
 
 .navtext {
@@ -155,6 +154,9 @@ p {
   font-family: Dolly-new, sans-serif;
 }
 
+.info > p {
+  margin: 3rem;
+}
 @media screen and (min-width: 950px) {
   main {
     display: grid;
