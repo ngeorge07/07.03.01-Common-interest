@@ -16,22 +16,10 @@ fetch(url, options)
     return response.json();
   })
   .then((data) => {
-    // handleData(data);
-
     generateBoard(data);
   });
 
 function generateBoard(chess) {
-  /************************ 
-   MAKE BOARD OUT OF GRID ITEMS
-  *************************/
-  // for (let i = 0; i < 64; i++) {
-  //   const template = document.querySelector("template").content;
-  //   const clone = template.cloneNode(true);
-
-  //   document.querySelector(".grid").appendChild(clone);
-  // }
-
   /************************ 
    PLACE EACH SET OF PIECES INTO THE RIGHT GRID SPACE
   *************************/
@@ -89,10 +77,6 @@ function generateBoard(chess) {
 
     blk_pawns[i].firstChild.innerHTML = chess[5].codeblk;
     wht_pawns[i].firstChild.innerHTML = chess[5].codewht;
-
-    //to add class to buttons just in case we'll need it later :)
-    // wht_pawns[i].firstChild.classList.add("pawns");
-    // blk_pawns[i].firstChild.classList.add("pawns");
   }
 
   /************************ 
@@ -174,6 +158,9 @@ function generateBoard(chess) {
   for (let y = 0; y < allPieces.length; y++) {
     allPieces[y].addEventListener("click", showInfo);
 
+    /************************ 
+  UPDATE THE INFO CARD WITH THE INFO FETCHED FORM DB
+  *************************/
     function showInfo(e) {
       console.log(e.target.className);
       if (e.target.className === "pawn") {

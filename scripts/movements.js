@@ -23,6 +23,9 @@ function animations(chess) {
     allPieces[y].addEventListener("click", showAnimation);
   }
 
+  /************************ 
+  DECLARE VARIABLES
+  *************************/
   const origin = document.querySelector(".grid__item:nth-of-type(13)");
   let newDiv = document.createElement("div");
   let circles;
@@ -32,7 +35,9 @@ function animations(chess) {
   origin.appendChild(newDiv);
 
   function showAnimation(e) {
-    console.log(e.target.className);
+    /************************ 
+    FUNCTIONS TO DELETE EXISTING GRAY CIRCLES AND ADD NEW ONES
+    *************************/
     function deleteCircles() {
       if (document.querySelector(".circle")) {
         allCircles = document.querySelectorAll(".circle");
@@ -48,7 +53,10 @@ function animations(chess) {
         circles[i].firstChild.setAttribute("class", "circle");
       }
     }
-
+    /************************ 
+    PLACE CLICKED PIECE IN ORIGIN, RUN ANIMATION
+    CHECHK IF THERE ARE CIRCLES IF YES DELETE THEM, SAVE PLACES FOR NEW ONES IN AN ARRAY, ADD NEW CIRCLES
+    *************************/
     if (e.target.className === "moveb pawn-piece") {
       origin.firstChild.innerHTML = chess[5].codeblk;
       origin.firstChild.setAttribute("class", "newDiv movePawn");
