@@ -39,7 +39,7 @@ NAV START
 
 .navtext {
   text-decoration: none;
-  font-size: calc(14px + (85 - 14) * ((100vw - 270px) / (3000 - 270)));
+  font-size: calc(12px + (85 - 12) * ((100vw - 270px) / (3000 - 270)));
 
   grid-area: 1 / 1 / 2 / 2;
   display: flex;
