@@ -101,11 +101,11 @@ function generateBoard(chess) {
     blk_bishops[x].appendChild(document.createElement("button"));
     wht_bishops[x].appendChild(document.createElement("button"));
 
-    blk_rooks[x].firstChild.innerHTML = chess[4].codeblk;
-    wht_rooks[x].firstChild.innerHTML = chess[4].codewht;
+    blk_rooks[x].firstChild.innerHTML = chess[3].codeblk;
+    wht_rooks[x].firstChild.innerHTML = chess[3].codewht;
 
-    blk_knights[x].firstChild.innerHTML = chess[2].codeblk;
-    wht_knights[x].firstChild.innerHTML = chess[2].codewht;
+    blk_knights[x].firstChild.innerHTML = chess[4].codeblk;
+    wht_knights[x].firstChild.innerHTML = chess[4].codewht;
 
     blk_bishops[x].firstChild.innerHTML = chess[0].codewht;
     wht_bishops[x].firstChild.innerHTML = chess[0].codeblk;
@@ -137,11 +137,11 @@ function generateBoard(chess) {
 
   const blk_king = document.querySelector(".grid__item:nth-of-type(5)");
   blk_king.appendChild(document.createElement("button"));
-  blk_king.firstChild.innerHTML = chess[3].codeblk;
+  blk_king.firstChild.innerHTML = chess[2].codeblk;
 
   const wht_king = document.querySelector(".grid__item:nth-of-type(61)");
   wht_king.appendChild(document.createElement("button"));
-  wht_king.firstChild.innerHTML = chess[3].codewht;
+  wht_king.firstChild.innerHTML = chess[2].codewht;
 
   /************************ 
   ADD CLASSES QUEENS AND KINGS
@@ -165,40 +165,46 @@ function generateBoard(chess) {
       console.log(e.target.className);
       if (e.target.className === "pawn") {
         document.querySelector(".info_name").textContent = chess[5].name;
+        document.querySelector(".info_img").src = chess[5].img;
         document.querySelector(
           ".info_value"
         ).textContent = `Value: ${chess[5].value}`;
         document.querySelector(".info_desc").textContent = chess[5].movement;
       } else if (e.target.className === "rook") {
+        document.querySelector(".info_name").textContent = chess[3].name;
+        document.querySelector(".info_img").src = chess[3].img;
+        document.querySelector(
+          ".info_value"
+        ).textContent = `Value: ${chess[3].value}`;
+        document.querySelector(".info_desc").textContent = chess[3].movement;
+      } else if (e.target.className === "knight") {
         document.querySelector(".info_name").textContent = chess[4].name;
+        document.querySelector(".info_img").src = chess[4].img;
         document.querySelector(
           ".info_value"
         ).textContent = `Value: ${chess[4].value}`;
         document.querySelector(".info_desc").textContent = chess[4].movement;
-      } else if (e.target.className === "knight") {
-        document.querySelector(".info_name").textContent = chess[2].name;
-        document.querySelector(
-          ".info_value"
-        ).textContent = `Value: ${chess[2].value}`;
-        document.querySelector(".info_desc").textContent = chess[2].movement;
       } else if (e.target.className === "bishop") {
         document.querySelector(".info_name").textContent = chess[0].name;
+        document.querySelector(".info_img").src = chess[0].img;
         document.querySelector(
           ".info_value"
         ).textContent = `Value: ${chess[0].value}`;
         document.querySelector(".info_desc").textContent = chess[0].movement;
       } else if (e.target.className === "queen") {
         document.querySelector(".info_name").textContent = chess[1].name;
+        document.querySelector(".info_img").src = chess[1].img;
         document.querySelector(
           ".info_value"
         ).textContent = `Value: ${chess[1].value}`;
         document.querySelector(".info_desc").textContent = chess[1].movement;
       } else if (e.target.className === "king") {
-        document.querySelector(".info_name").textContent = chess[3].name;
+        document.querySelector(".info_name").textContent = chess[2].name;
+        document.querySelector(".info_img").src = chess[2].img;
         document.querySelector(
           ".info_value"
-        ).textContent = `Value: ${chess[3].value}`;
-        document.querySelector(".info_desc").textContent = chess[3].movement;
+        ).textContent = `Value: ${chess[2].value}`;
+        document.querySelector(".info_desc").textContent = chess[2].movement;
       }
     }
   }

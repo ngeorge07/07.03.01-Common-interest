@@ -48,7 +48,7 @@ function animations(chess) {
     }
     /************************ 
     PLACE CLICKED PIECE IN ORIGIN, RUN ANIMATION
-    CHECHK IF THERE ARE CIRCLES IF YES DELETE THEM, SAVE PLACES FOR NEW ONES IN AN ARRAY, ADD NEW CIRCLES
+    CHECK IF THERE ARE CIRCLES IF YES DELETE THEM, SAVE PLACES FOR NEW ONES IN AN ARRAY, ADD NEW CIRCLES
     *************************/
     if (e.target.className === "moveb pawn-piece") {
       origin.firstChild.innerHTML = chess[5].codeblk;
@@ -61,7 +61,7 @@ function animations(chess) {
       ];
       addCircles();
     } else if (e.target.className === "moveb rook-piece") {
-      origin.firstChild.innerHTML = chess[4].codeblk;
+      origin.firstChild.innerHTML = chess[3].codeblk;
       origin.firstChild.setAttribute("class", "newDiv moveRook");
       deleteCircles();
 
@@ -77,7 +77,7 @@ function animations(chess) {
       ];
       addCircles();
     } else if (e.target.className === "moveb knight-piece") {
-      origin.firstChild.innerHTML = chess[2].codeblk;
+      origin.firstChild.innerHTML = chess[4].codeblk;
       origin.firstChild.setAttribute("class", "newDiv moveKnight");
       deleteCircles();
 
@@ -133,7 +133,7 @@ function animations(chess) {
       ];
       addCircles();
     } else if (e.target.className === "moveb king-piece") {
-      origin.firstChild.innerHTML = chess[3].codeblk;
+      origin.firstChild.innerHTML = chess[2].codeblk;
       origin.firstChild.setAttribute("class", "newDiv moveKing");
       deleteCircles();
 
