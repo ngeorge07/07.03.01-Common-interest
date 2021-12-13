@@ -4,7 +4,7 @@ const url = "https://gnmmd2ndsemester-6f2a.restdb.io/rest/chess";
 
 const options = {
   headers: {
-    "x-apikey": "6134eac643cedb6d1f97ecdd",
+    "x-apikey": "61b64c7672a03f5dae822307",
   },
 };
 
